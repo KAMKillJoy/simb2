@@ -19,7 +19,9 @@ class ManagerFormLocators(BasePage):
 
     LOCATOR_FIRSTNAME_SORT = (By.XPATH, "//a[contains(text(), 'First Name')]")
 
-    LOCATOR_CUSTOMERS_TABLE = (By.XPATH, "/html/body/div[1]/div/div[2]/div/div[2]/div/div/table/tbody")
+    LOCATOR_CUSTOMERS_TABLE = (By.XPATH, "/html/body/div[1]/div/div[2]/div/div[2]/div/div/table/tbody/tr")
+
+    LOCATOR_DELETE_CUSTOMER = (By.XPATH, "//tr[@class='ng-scope'][{row}]//button[@ng-click='deleteCust(cust)']")
 
 
 
@@ -47,9 +49,14 @@ class ManagerFormMethods(BasePage):
         self.find_element(ManagerFormLocators.LOCATOR_CUSTOMERS_BUTTON).click()
 
     def get_customers_table(self):
-        return self.find_element(ManagerFormLocators.LOCATOR_CUSTOMERS_TABLE)
+        return self.find_elements(ManagerFormLocators.LOCATOR_CUSTOMERS_TABLE)
 
-
+    def delete_client_by_row_number(self, row):
+        ManagerFormLocators.LOCATOR_DELETE_CUSTOMER = \
+            (ManagerFormLocators.LOCATOR_DELETE_CUSTOMER[0],
+             ManagerFormLocators.LOCATOR_DELETE_CUSTOMER[1].replace("{row}", str(row+1)))
+        print(ManagerFormLocators.LOCATOR_DELETE_CUSTOMER)
+        self.find_element(ManagerFormLocators.LOCATOR_DELETE_CUSTOMER).click()
 '''
     def read_result_modal_title(self):
         self.read_element(self.find_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_TITLE))
