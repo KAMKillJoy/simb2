@@ -22,3 +22,6 @@ class BasePage:
     def read_element(self, element):
         return element.text
 
+    def dismiss_alert(self):
+        alert = self.driver.switch_to.alert
+        alert.dismiss()
