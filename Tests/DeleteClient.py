@@ -19,7 +19,7 @@ def find_loh_client(client_names_list):
     return loh_client
 
 
-def delete_client(browser):
+def test_delete_client(browser):
     manager_form = ManagerFormMethods(browser)
     manager_form.go_to_site()
     manager_form.click_customers()
@@ -33,3 +33,8 @@ def delete_client(browser):
     loh_client_number = client_names.index(loh_client)
     #  print (loh_client_number)
     manager_form.delete_client_by_row_number(loh_client_number)
+
+    rows = manager_form.get_customers_table()
+    for row in rows:
+        assert loh_client not in row.text
+
