@@ -1,4 +1,4 @@
-import addcustomer
+import AddCustomer
 import SortClients
 import DeleteClient
 from confest import browser
