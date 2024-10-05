@@ -19,7 +19,6 @@ def test_new_client_add_form(browser):
     rows = manager_form.get_customers_table()
     for row in rows:
         if client.first_name in row.text:
-            print (row.text)
             cells = row.find_elements(By.TAG_NAME, "td")
             assert cells[0].text == str(client.first_name)
             assert cells[1].text == str(client.second_name)
