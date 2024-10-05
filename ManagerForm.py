@@ -57,38 +57,3 @@ class ManagerFormMethods(BasePage):
              ManagerFormLocators.LOCATOR_DELETE_CUSTOMER[1].replace("{row}", str(row+1)))
         #  print(ManagerFormLocators.LOCATOR_DELETE_CUSTOMER)
         self.find_element(ManagerFormLocators.LOCATOR_DELETE_CUSTOMER).click()
-'''
-    def read_result_modal_title(self):
-        self.read_element(self.find_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_TITLE))
-
-    def read_result_modal_student_name(self):
-        self.read_element(self.find_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_STUDENT_NAME))
-
-    def read_result_modal_student_email(self):
-        self.read_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_STUDENT_EMAIL)
-
-    def read_result_modal_student_gender(self):
-        self.read_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_STUDENT_GENDER)
-
-    def read_result_modal_student_mobile(self):
-        self.read_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_STUDENT_MOBILE)
-
-    def read_result_modal_student_date_of_birth(self):
-        self.read_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_STUDENT_DATE_OF_BIRTH)
-
-    def read_result_modal_student_subjects(self):
-        self.read_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_STUDENT_SUBJECTS)
-
-    def read_result_modal_student_hobbies(self):
-        self.read_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_STUDENT_HOBBIES)
-
-    def read_result_modal_student_picture(self):
-        self.read_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_STUDENT_PICTURE)
-
-    def read_result_modal_student_address(self):
-        self.read_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_STUDENT_ADDRESS)
-
-    def read_result_modal_state_and_city(self):
-        self.read_element(ManagerFormLocators.LOCATOR_RESULT_MODAL_STUDENT_STATE_AND_CITY)
-        
-'''
