@@ -9,7 +9,7 @@ def find_loh_client(client_names_list):
     for name in client_names_list:
         name_len_sum += len(name)
     av_name_len = name_len_sum/len(client_names_list)
-    closest = 110
+    closest = 999
     for name in client_names_list:
         avdif = abs(len(name) - av_name_len)
         if avdif < closest:
@@ -19,7 +19,7 @@ def find_loh_client(client_names_list):
     return loh_client
 
 
-def test_delete_client(browser):
+def delete_client(browser):
     manager_form = ManagerFormMethods(browser)
     manager_form.go_to_site()
     manager_form.click_customers()
@@ -29,7 +29,7 @@ def test_delete_client(browser):
     for row in rows:
         client_names.append(row.find_element(By.XPATH, "./td[1]").text)
     loh_client = find_loh_client(client_names)
-    print (loh_client)
+    #  print (loh_client)
     loh_client_number = client_names.index(loh_client)
-    print (loh_client_number)
+    #  print (loh_client_number)
     manager_form.delete_client_by_row_number(loh_client_number)

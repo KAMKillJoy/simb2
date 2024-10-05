@@ -6,3 +6,4 @@ def sort_clients(browser):
     manager_form.go_to_site()
     manager_form.click_customers()
     manager_form.click_firstname_sort()
+    manager_form.click_firstname_sort()
