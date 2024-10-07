@@ -1,4 +1,5 @@
 cd "%~dp0"
 call .\.venv\Scripts\activate.bat
-pytest .\Tests -n auto 
+python -m pytest .\Tests -n auto --alluredir .\results
+allure serve .\results
 pause
