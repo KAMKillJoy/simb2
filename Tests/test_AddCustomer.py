@@ -1,6 +1,6 @@
 import allure
 from NewClient import Client
-from ManagerForm import ManagerFormMethods
+from Pages.ManagerForm import ManagerFormMethods
 from confest import browser
 from selenium.webdriver.common.by import By
 
