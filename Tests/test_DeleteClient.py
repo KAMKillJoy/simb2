@@ -1,5 +1,4 @@
 import allure
-from selenium.webdriver.common.by import By
 
 from Pages.ManagerForm import ManagerFormMethods
 from confest import browser
