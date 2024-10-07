@@ -11,4 +11,4 @@ options.add_experimental_option("detach", True)
 def browser():
     driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()), options=options)
     yield driver
-    #driver.quit()
+    driver.quit()
